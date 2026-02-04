@@ -1,0 +1,324 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+/* LIGHT MODE */
+body {
+    background: linear-gradient(135deg, #f5f7fa, #e6f4f1);
+    color: #1f2933;
+    transition: background 0.4s, color 0.4s;
+}
+
+.container {
+    min-height: 100vh;
+    padding: 40px 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: #0f766e;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.theme-toggle:hover {
+    transform: rotate(20deg);
+}
+
+/* MAIN */
+.yonmayon {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.hero {
+    max-width: 620px;
+    animation: fadeUp 1s ease;
+}
+
+.hero h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #4b5563;
+    margin-bottom: 35px;
+    line-height: 1.6;
+}
+
+/* BUTTONS */
+.buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 14px 28px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.primary {
+    background: #0f766e;
+    color: white;
+    box-shadow: 0 15px 30px rgba(15, 118, 110, 0.3);
+}
+
+.primary:hover {
+    background: #115e59;
+    transform: translateY(-4px);
+}
+
+.secondary {
+    border: 2px solid #0f766e;
+    color: #0f766e;
+}
+
+.secondary:hover {
+    background: #e6f4f1;
+    transform: translateY(-4px);
+}
+
+/* IMAGE */
+.boshlangich {
+    width: 500px;
+    max-width: 100%;
+    border-radius: 28px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+    animation: float 4s ease-in-out infinite;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    font-size: 14px;
+    color: #6b7280;
+    margin-top: 50px;
+}
+
+/* DARK MODE */
+body.dark {
+    background: linear-gradient(135deg, #0f172a, #020617);
+    color: #e5e7eb;
+}
+
+body.dark .hero p,
+body.dark footer {
+    color: #9ca3af;
+}
+
+body.dark .primary {
+    background: #14b8a6;
+}
+
+body.dark .primary:hover {
+    background: #0d9488;
+}
+
+body.dark .secondary {
+    border-color: #2dd4bf;
+    color: #2dd4bf;
+}
+
+body.dark .secondary:hover {
+    background: rgba(45, 212, 191, 0.1);
+}
+
+body.dark .boshlangich {
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 30px;
+    }
+
+    .yonmayon {
+        text-align: center;
+        justify-content: center;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* BODY & CANVAS */
+body {
+    background: #0b0c2a;
+    overflow: hidden;
+    position: relative;
+    height: 100vh;
+}
+
+#stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+/* REGISTER BOX */
+.register-box {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    color: white;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.register-box h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #0ff;
+}
+
+/* INPUT FIELD EFFECT */
+.register-box input {
+    width: 280px;
+    padding: 12px 15px;
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    font-size: 16px;
+    margin-bottom: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    transition: 0.3s all;
+}
+
+.register-box input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.register-box input:focus {
+    border-color: #0ff;
+    box-shadow: 0 0 15px #0ff;
+    outline: none;
+    transform: scale(1.02);
+}
+
+/* BUTTON EFFECT */
+.btn.primary {
+    background: linear-gradient(45deg, #0ff, #0f766e);
+    color: #000;
+    font-weight: bold;
+    border-radius: 12px;
+    padding: 12px 28px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn.primary:hover {
+    transform: scale(1.1) rotate(-2deg);
+    box-shadow: 0 0 20px #0ff, 0 0 40px #0ff inset;
+}
+
+/* BUTTON RIPPLE EFFECT */
+.btn.primary span {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(10);
+        opacity: 0;
+    }
+}
+
+/* USER AVATAR */
+.user-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #0f766e;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+    cursor: default;
+    box-shadow: 0 0 10px #0ff;
+}
